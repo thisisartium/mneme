@@ -25,13 +25,10 @@
   "updateRemoteUserUID": false,
 
   // build development environment on creation, make sure you already have shell.nix
-  // "onCreateCommand": "nix-shell --command 'echo done building nix dev environment'",
+  "onCreateCommand": "nix develop --install",
 
   // Add the IDs of extensions you want installed when the container is created.
-  "extensions": [
-    // select nix environment
-    "Rubymaniac.vscode-direnv"
-  ],
+  "extensions": ["Rubymaniac.vscode-direnv"],
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   "forwardPorts": [2113, 5432]
