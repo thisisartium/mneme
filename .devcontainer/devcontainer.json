@@ -10,7 +10,7 @@
       "USER_GID": "${localEnv:USER_GID}"
     }
   },
-
+  
   // run arguments passed to docker
   "runArgs": ["--security-opt", "label=disable"],
 
@@ -29,6 +29,10 @@
 
   // Add the IDs of extensions you want installed when the container is created.
   "extensions": ["Rubymaniac.vscode-direnv"],
+
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   "forwardPorts": [2113, 5432]
