@@ -10,7 +10,7 @@ pub trait TestStore: EventStore + Send {
     async fn read_client_events(event_store: &Self, stream_id: EventStreamId) -> Vec<TestEvent>;
 }
 
-#[derive(Clone)]
+#[derive(Clone, Default)]
 pub struct NoopCommand {
     id: Uuid,
 }
@@ -40,7 +40,7 @@ impl Command for NoopCommand {
 #[error("Command failed: {0}")]
 pub struct RejectCommandError(String);
 
-#[derive(Clone)]
+#[derive(Clone, Default)]
 pub struct RejectCommand {
     id: Uuid,
 }
